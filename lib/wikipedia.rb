@@ -39,7 +39,7 @@ module Wikipedia
     path                'w/api.php'
     localized_redirect  'REDIRECT'
     user_agent(
-      'wikipedia-client/1.3 (https://github.com/kenpratt/wikipedia-client)'
+      'wikipedia-client/1.3 (https://github.com/kristianm/wikipedia-client) (fork of https://github.com/kenpratt/wikipedia-client)'
     )
   }
 
