@@ -21,6 +21,10 @@ module Wikipedia
     client.find_image( title, options )
   end
 
+  def self.find_page_image( title, width = nil, options = {} )
+    client.find_page_image( title, width, options )
+  end
+
   def self.find_random( options = {} )
     client.find_random( options )
   end

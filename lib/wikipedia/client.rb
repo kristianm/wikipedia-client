@@ -23,6 +23,12 @@ module Wikipedia
       Page.new( request_image( title, options ) )
     end
 
+    def find_page_image( title, width = nil, options = {} )
+      title = Url.new(title).title rescue title
+      options.merge!(:pithumbsize => width) if width.to_i > 0
+      Page.new( request_page_image( title, options ) )
+    end
+
     def find_random( options = {} )
       require 'json'
       data = JSON::load( request_random( options ) )
@@ -49,6 +55,15 @@ module Wikipedia
                  :prop => "imageinfo",
                  :iiprop => "url",
                  :titles => title
+               }.merge( options ) )
+    end
+
+    # http://en.wikipedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url&titles=File:Flower.png
+    def request_page_image( title, options = {} )
+      request( {
+                   :action => "query",
+                   :prop => "pageimages",
+                   :titles => title
                }.merge( options ) )
     end
 
