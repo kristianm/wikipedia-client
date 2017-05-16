@@ -11,15 +11,15 @@ module Wikipedia
     end
 
     def url
-      page['thumbnail']['source']
+      page['thumbnail']['source'] if page['thumbnail']
     end
 
     def width
-      page['thumbnail']['width']
+      page['thumbnail']['width'] if page['thumbnail']
     end
 
     def height
-      page['thumbnail']['height']
+      page['thumbnail']['height'] if page['thumbnail']
     end
   end
 end
