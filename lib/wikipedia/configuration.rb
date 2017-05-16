@@ -20,6 +20,6 @@ module Wikipedia
       instance.send(directive)
     end
 
-    directives :protocol, :domain, :path, :user_agent
+    directives :protocol, :domain, :path, :user_agent, :localized_redirect
   end
 end

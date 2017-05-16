@@ -30,9 +30,10 @@ module Wikipedia
   end
 
   Configure {
-    protocol  'https'
-    domain    'en.wikipedia.org'
-    path      'w/api.php'
+    protocol            'https'
+    domain              'en.wikipedia.org'
+    path                'w/api.php'
+    localized_redirect  'REDIRECT'
     user_agent(
       'wikipedia-client/1.3 (https://github.com/kenpratt/wikipedia-client)'
     )
