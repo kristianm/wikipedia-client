@@ -21,5 +21,9 @@ module Wikipedia
     def height
       page['thumbnail']['height'] if page['thumbnail']
     end
+
+    def name
+      page['pageimage']
+    end
   end
 end
